@@ -60,7 +60,7 @@ GigShield is an AI-enabled parametric income insurance platform built for all th
 - Provides **proactive LSTM forecasting** so riders know their risk level before the week starts
 - Delivers **payouts to UPI within 4 hours** of a confirmed disruption
 
-> ⚠️ **Coverage Scope:** GigShield strictly covers **loss of income only**. Health, life, accident, and vehicle repair claims are explicitly excluded by design.
+>  **Coverage Scope:** GigShield strictly covers **loss of income only**. Health, life, accident, and vehicle repair claims are explicitly excluded by design.
 
 ---
 
@@ -70,7 +70,7 @@ GigShield covers all three delivery segments. Each has distinct risk profiles, e
 
 ---
 
-### 🍔 Food Delivery — Primary Persona: Ravi (Swiggy, Bengaluru)
+###  Food Delivery — Primary Persona: Ravi (Swiggy, Bengaluru)
 
 ```
 Name:         Ravi Kumar
@@ -88,8 +88,8 @@ Concern:      "When it rains heavily, I lose the whole day. No orders, no income
 > Southwest monsoon brings 18mm/hr rainfall to BTM Layout. Swiggy order volume drops 47%. AQI normal.
 
 GigShield Response:
-- Rain signal fires ✅ (> 8mm/hr threshold)
-- Order volume drop signal fires ✅ (> 35% below 4-week baseline)
+- Rain signal fires  (> 8mm/hr threshold)
+- Order volume drop signal fires  (> 35% below 4-week baseline)
 - MSC (Multi-Signal Confluence) confirmed — 2/3 core signals active
 - Earnings DNA calculates: ₹137 × 4 hrs × 0.87 ZIF × 0.70 = **₹333 payout**
 - Fraud pipeline scores claim: **91/100 Confidence — Auto Approved**
@@ -102,16 +102,16 @@ Ravi did nothing. No form. No call. No waiting.
 
 > Post-Diwali AQI reaches 287 (Very Poor) across South Bengaluru. Order volume drops 38%.
 
-- AQI signal fires ✅ (> 200 threshold)
-- Order volume drop fires ✅
+- AQI signal fires  (> 200 threshold)
+- Order volume drop fires 
 - MSC confirmed → Payout: **₹291** — Auto-approved and sent to UPI
 
 **Scenario 3 — Light Drizzle (NO Payout — Correct Behaviour)**
 
 > Light intermittent rain, 3mm/hr. Orders continue normally.
 
-- Rain signal does NOT meet threshold (< 8mm/hr) ❌
-- Order volume normal — no drop signal ❌
+- Rain signal does NOT meet threshold (< 8mm/hr) 
+- Order volume normal — no drop signal 
 - MSC NOT confirmed → **No payout triggered**
 
 This scenario is as important as the payout scenarios. GigShield does not pay on every weather event — only on genuine income-disrupting confluences.
@@ -120,14 +120,14 @@ This scenario is as important as the payout scenarios. GigShield does not pay on
 
 > A bad actor claims during a rain event, but GPS shows their location is 8.2km from their registered zone.
 
-- L1 GPS Coherence check fires ❌
+- L1 GPS Coherence check fires 
 - Confidence Score: **12/100 — Auto Rejected**
 - Rider notified with reason code: `LOCATION_MISMATCH`
 - Claim logged in fraud audit trail
 
 ---
 
-### 📦 E-Commerce — Persona: Suresh (Amazon Flex, Bengaluru)
+###  E-Commerce — Persona: Suresh (Amazon Flex, Bengaluru)
 
 ```
 Name:         Suresh Nair
