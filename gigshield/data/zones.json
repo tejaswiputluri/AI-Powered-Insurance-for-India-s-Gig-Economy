@@ -1,0 +1,14 @@
+{
+  "zones": [
+    {"id": "BTM_LAYOUT",     "name": "BTM Layout",      "lat": 12.9165, "lon": 77.6101, "base_zif": 0.87},
+    {"id": "KORAMANGALA",    "name": "Koramangala",     "lat": 12.9352, "lon": 77.6245, "base_zif": 0.82},
+    {"id": "INDIRANAGAR",    "name": "Indiranagar",     "lat": 12.9784, "lon": 77.6408, "base_zif": 0.91},
+    {"id": "WHITEFIELD",     "name": "Whitefield",      "lat": 12.9698, "lon": 77.7499, "base_zif": 0.79},
+    {"id": "JAYANAGAR",      "name": "Jayanagar",       "lat": 12.9308, "lon": 77.5839, "base_zif": 0.85},
+    {"id": "MARATHAHALLI",   "name": "Marathahalli",    "lat": 12.9591, "lon": 77.6972, "base_zif": 0.76},
+    {"id": "HSR_LAYOUT",     "name": "HSR Layout",      "lat": 12.9116, "lon": 77.6389, "base_zif": 0.88},
+    {"id": "ELECTRONIC_CITY","name": "Electronic City",  "lat": 12.8445, "lon": 77.6602, "base_zif": 0.72},
+    {"id": "HEBBAL",         "name": "Hebbal",          "lat": 13.0358, "lon": 77.5970, "base_zif": 0.80},
+    {"id": "JP_NAGAR",       "name": "JP Nagar",        "lat": 12.9108, "lon": 77.5916, "base_zif": 0.83}
+  ]
+}

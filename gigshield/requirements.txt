@@ -1,0 +1,44 @@
+# Core
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# Database
+sqlalchemy==2.0.30
+asyncpg==0.29.0
+aiosqlite==0.20.0
+alembic==1.13.1
+greenlet==3.0.3
+
+# Cache (optional — in-memory fallback used when unavailable)
+redis==5.0.4
+
+# Scheduler
+apscheduler==3.10.4
+
+# HTTP
+httpx==0.27.0
+
+# ML
+torch==2.3.0
+torchvision==0.18.0
+scikit-learn==1.4.2
+numpy==1.26.4
+pandas==2.2.2
+
+# Auth
+firebase-admin==6.5.0
+python-jose[cryptography]==3.3.0
+
+# Payment
+razorpay==1.4.1
+
+# Utilities
+python-dotenv==1.0.1
+python-multipart==0.0.9
+haversine==2.8.1
+
+# Testing
+pytest==8.2.0
+pytest-asyncio==0.23.7

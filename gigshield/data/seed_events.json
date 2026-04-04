@@ -1,0 +1,45 @@
+[
+  {
+    "scenario": "rain_order_drop",
+    "description": "Heavy Rain (14.2mm/hr) + Order Drop (41%) in BTM Layout",
+    "zone_id": "BTM_LAYOUT",
+    "rainfall_mm_hr": 14.2,
+    "aqi_value": 85,
+    "order_drop_pct": 0.41,
+    "signals_confirmed": 2,
+    "msc_status": "standard"
+  },
+  {
+    "scenario": "aqi_order",
+    "description": "High AQI (218) + Order Drop (38%) in BTM Layout",
+    "zone_id": "BTM_LAYOUT",
+    "rainfall_mm_hr": 2.1,
+    "aqi_value": 218,
+    "order_drop_pct": 0.38,
+    "signals_confirmed": 2,
+    "msc_status": "standard"
+  },
+  {
+    "scenario": "full_3_signal",
+    "description": "Triple Signal: Rain (18.5mm/hr) + AQI (240) + Orders (52% drop)",
+    "zone_id": "BTM_LAYOUT",
+    "rainfall_mm_hr": 18.5,
+    "aqi_value": 240,
+    "order_drop_pct": 0.52,
+    "signals_confirmed": 3,
+    "msc_status": "high"
+  },
+  {
+    "scenario": "fraud_attempt",
+    "description": "Fraud test: Rain event but rider GPS 8.2km from zone",
+    "zone_id": "BTM_LAYOUT",
+    "rainfall_mm_hr": 12.0,
+    "aqi_value": 95,
+    "order_drop_pct": 0.39,
+    "signals_confirmed": 2,
+    "msc_status": "standard",
+    "fraud_override": {
+      "gps_distance_km": 8.2
+    }
+  }
+]

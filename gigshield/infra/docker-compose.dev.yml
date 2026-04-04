@@ -1,0 +1,48 @@
+# docker-compose.dev.yml — Development override for GigShield
+# Usage: docker compose -f infra/docker-compose.yml -f infra/docker-compose.dev.yml up
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    volumes:
+      - ../backend:/app/backend  # Hot reload source
+      - ../.env:/app/.env
+    environment:
+      - APP_ENV=development
+      - DEMO_MODE=true
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+
+  # Override ML services to use fallback (no GPU needed in dev)
+  ml-premium:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: uvicorn backend.ml.premium.serve:app --host 0.0.0.0 --port 8001 --reload
+    volumes:
+      - ../backend:/app/backend
+    ports:
+      - "8001:8001"
+
+  ml-forecast:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: uvicorn backend.ml.forecast.serve:app --host 0.0.0.0 --port 8002 --reload
+    volumes:
+      - ../backend:/app/backend
+    ports:
+      - "8002:8002"
+
+  ml-cnn:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: uvicorn backend.ml.cnn_verify.serve:app --host 0.0.0.0 --port 8003 --reload
+    volumes:
+      - ../backend:/app/backend
+    ports:
+      - "8003:8003"

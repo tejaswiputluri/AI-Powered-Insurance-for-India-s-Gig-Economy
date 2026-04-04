@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #002E4E;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(232, 155, 10, 0.3); border-radius: 4px; }
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+/* Gold gradient */
+.gold-gradient {
+  background: linear-gradient(135deg, #E89B0A, #f5da84, #E89B0A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulse animation for active disruption */
+.disruption-pulse {
+  animation: pulseGold 2s ease-in-out infinite;
+}
+
+/* Status colors */
+.status-approved { color: #1A7A35; }
+.status-flagged { color: #F39C12; }
+.status-rejected { color: #C0392B; }
+.status-pending { color: #2E86C1; }
+.status-paid { color: #1A7A35; }
+
+/* Demo mode banner */
+.demo-banner {
+  background: linear-gradient(90deg, #E89B0A, #f5da84);
+  color: #002E4E;
+  text-align: center;
+  padding: 4px 0;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
