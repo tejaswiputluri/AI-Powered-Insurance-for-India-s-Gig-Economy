@@ -67,6 +67,11 @@ export const demoLogin = () => api.post('/auth/demo-login');
 export const verifyToken = (firebaseToken) =>
   api.post('/auth/verify-token', { firebase_token: firebaseToken });
 
+export const loginWithPhone = (phoneNumber, otp = null) =>
+  api.post('/auth/phone-login', { phone_number: phoneNumber, otp });
+
+export const loginWithFacebook = () => api.post('/auth/facebook-login');
+
 // ─── Riders ──────────────────────────────────────────────────
 
 export const onboardRider = (data) => api.post('/riders/onboard', data);

@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import Auth from './pages/Auth';
 import Onboarding from './pages/Onboarding';
 import PremiumPanel from './pages/PremiumPanel';
 import Simulator from './pages/Simulator';
@@ -31,19 +32,6 @@ export default function App() {
     const token = localStorage.getItem('gigshield_token');
     if (token) {
       setIsLoggedIn(true);
-      setLoading(false);
-      return;
-    }
-
-    if (IS_DEMO) {
-      try {
-        const res = await demoLogin();
-        localStorage.setItem('gigshield_token', res.access_token);
-        localStorage.setItem('gigshield_rider_id', res.rider_id);
-        setIsLoggedIn(true);
-      } catch (err) {
-        console.error('Demo login failed:', err);
-      }
     }
     setLoading(false);
   }
@@ -77,37 +65,64 @@ export default function App() {
         <Route
           path="/"
           element={
-            isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/onboarding" />
+            isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/auth" />
           }
         />
+        <Route path="/auth" element={<Auth />} />
         <Route
           path="/onboarding"
           element={
-            <Onboarding
-              onComplete={(data) => {
-                setPremiumData(data);
-                setRiderData(data);
-              }}
-            />
+            isLoggedIn ? (
+              <Onboarding
+                onComplete={(data) => {
+                  setPremiumData(data);
+                  setRiderData(data);
+                }}
+              />
+            ) : (
+              <Navigate to="/auth" />
+            )
           }
         />
         <Route
           path="/premium"
-          element={<PremiumPanel premiumData={premiumData} />}
+          element={
+            isLoggedIn ? (
+              <PremiumPanel premiumData={premiumData} />
+            ) : (
+              <Navigate to="/auth" />
+            )
+          }
         />
-        <Route path="/simulator" element={<Simulator />} />
+        <Route
+          path="/simulator"
+          element={isLoggedIn ? <Simulator /> : <Navigate to="/auth" />}
+        />
         <Route
           path="/select-policy"
           element={
-            <PolicySelect
-              premiumData={premiumData}
-              onPolicyCreated={() => setIsLoggedIn(true)}
-            />
+            isLoggedIn ? (
+              <PolicySelect
+                premiumData={premiumData}
+                onPolicyCreated={() => setIsLoggedIn(true)}
+              />
+            ) : (
+              <Navigate to="/auth" />
+            )
           }
         />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/claim/:claimId" element={<ClaimStatus />} />
-        <Route path="/claims" element={<ClaimHistory />} />
+        <Route
+          path="/dashboard"
+          element={isLoggedIn ? <Dashboard /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/claim/:claimId"
+          element={isLoggedIn ? <ClaimStatus /> : <Navigate to="/auth" />}
+        />
+        <Route
+          path="/claims"
+          element={isLoggedIn ? <ClaimHistory /> : <Navigate to="/auth" />}
+        />
       </Routes>
     </BrowserRouter>
   );
